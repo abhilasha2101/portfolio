@@ -80,6 +80,7 @@ export default function Container(props: ContainerProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
 
   const { children, ...customMeta } = props;
   const router = useRouter();
@@ -90,6 +91,10 @@ export default function Container(props: ContainerProps) {
     type: "website",
     ...customMeta,
   };
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // handle scroll
   useEffect(() => {
@@ -205,17 +210,16 @@ export default function Container(props: ContainerProps) {
                 </button>
               </div>
               <div className="flex h-full flex-col items-start justify-between overflow-y-auto">
-                {/* Links */}
                 <ul className="flex min-h-fit w-full flex-col items-start space-y-6 px-[22px] py-[58px]">
                   {navLinks.map((link, i) => (
-                    <button key={link.href} onClick={() => setIsOpen(false)}>
+                    <div key={link.href} onClick={() => setIsOpen(false)} className="w-full">
                       <NavItem
                         href={link.href}
                         text={link.text}
                         i={i}
                         className="text-xl"
                       />
-                    </button>
+                    </div>
                   ))}
                 </ul>
 
@@ -243,7 +247,7 @@ export default function Container(props: ContainerProps) {
 
       {/* Preloader */}
       <AnimatePresence mode="wait">
-        {isLoading && <Preloader />}
+        {isMounted && isLoading && <Preloader />}
       </AnimatePresence>
 
       {/* Main content */}

@@ -6,9 +6,11 @@ import { MailIcon } from "lucide-react";
 export default function Footer() {
   // get the current time in UTC+5:30 time zone (IST)
   const [time, setTime] = useState<string>("");
+  const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    setMounted(true);
+    const updateTime = () => {
       const date = new Date();
       setTime(
         date.toLocaleTimeString("en-US", {
@@ -18,7 +20,9 @@ export default function Footer() {
           minute: "numeric",
         }),
       );
-    }, 1000);
+    };
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -40,7 +44,9 @@ export default function Footer() {
           <hr className="hidden h-6 border-l border-muted md:flex" />
           <span className="hidden flex-row items-center space-x-2 md:flex">
             <p className="text-xs text-muted-foreground">Local time:</p>
-            <p className="text-sm font-semibold">{time} IST (UTC+5:30)</p>
+            <p className="text-sm font-semibold" suppressHydrationWarning>
+              {mounted ? time : "--:--"} IST (UTC+5:30)
+            </p>
           </span>
         </span>
         <Link
