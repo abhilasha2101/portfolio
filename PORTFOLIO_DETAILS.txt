@@ -1,0 +1,110 @@
+================================================================================
+                    PORTFOLIO CUSTOMIZATION QUESTIONNAIRE
+================================================================================
+
+Please fill out your details below. Once updated, save this file and let me 
+know so I can update your portfolio website with your exact information!
+
+--------------------------------------------------------------------------------
+1. PERSONAL INFORMATION & BRANDING
+--------------------------------------------------------------------------------
+Full Name / Display Name: [e.g., Abhilasha Kumari]
+Tagline / Intro Role:     [e.g., Full-Stack Developer & Open Source Contributor]
+Short Bio / Elevator Pitch: 
+  [e.g., A passionate developer crafting modern, high-performance web applications and open-source tools.]
+
+Primary Email Address:    [e.g., yourname@example.com]
+Location / Timezone:      [e.g., India (UTC+5:30)]
+Resume / CV URL:          [e.g., link to resume PDF or Google Drive]
+
+--------------------------------------------------------------------------------
+2. SOCIAL & REPOSITORY LINKS
+--------------------------------------------------------------------------------
+GitHub Profile:   [e.g., https://github.com/your-username]
+LinkedIn Profile: [e.g., https://linkedin.com/in/your-profile]
+Twitter / X:      [e.g., https://x.com/your-handle]
+Discord / Other:  [e.g., username or link]
+
+--------------------------------------------------------------------------------
+3. ABOUT SECTION & STATS
+--------------------------------------------------------------------------------
+Key Technologies (Header Pills): [e.g., Next.js, TypeScript, TailwindCSS, Node.js]
+Years of Experience:              [e.g., 3+]
+Technologies Mastered:           [e.g., 10+]
+Projects / Companies Worked With: [e.g., 15+]
+
+Detailed About Paragraph:
+  [Write a paragraph about your background, journey, experience, and key skills...]
+
+--------------------------------------------------------------------------------
+4. FEATURED PROJECTS (Main Carousel Section)
+--------------------------------------------------------------------------------
+(Add as many projects as you'd like)
+
+Project 1:
+  - Title:        [e.g., My Cool Web App]
+  - Description:  [e.g., Full-stack web application for automated workflow management]
+  - Demo/Link:    [e.g., https://mycoolapp.com]
+  - Image/Video:  [e.g., /assets/project1.png or webm video]
+
+Project 2:
+  - Title:        [e.g., AI Analytics Dashboard]
+  - Description:  [e.g., Real-time data visualization platform]
+  - Demo/Link:    [e.g., https://github.com/your-username/dashboard]
+  - Image/Video:  [e.g., /assets/project2.png]
+
+Project 3:
+  - Title:        [e.g., E-Commerce Platform]
+  - Description:  [e.g., Modern online store built with Next.js and Stripe]
+  - Demo/Link:    [e.g., https://my-store.com]
+  - Image/Video:  [e.g., /assets/project3.png]
+
+--------------------------------------------------------------------------------
+5. OPEN SOURCE & COMMUNITY CONTRIBUTIONS (New Open Source Section)
+--------------------------------------------------------------------------------
+(Add your open-source repos, npm packages, or community projects)
+
+Open Source Project 1:
+  - Repository/Title: [e.g., react-custom-hooks]
+  - Description:      [e.g., Lightweight utility hooks library for React applications]
+  - Tech Tags:        [e.g., React, TypeScript, NPM]
+  - Stars / Metric:   [e.g., 120+]
+  - Forks / Metric:   [e.g., 35]
+  - GitHub Link:      [e.g., https://github.com/your-username/react-custom-hooks]
+
+Open Source Project 2:
+  - Repository/Title: [e.g., dev-cli-tool]
+  - Description:      [e.g., Command line tool for simplifying local development setup]
+  - Tech Tags:        [e.g., Node.js, CLI]
+  - Stars / Metric:   [e.g., 85+]
+  - Forks / Metric:   [e.g., 20]
+  - GitHub Link:      [e.g., https://github.com/your-username/dev-cli-tool]
+
+Open Source Project 3:
+  - Repository/Title: [e.g., Open Source Contributions]
+  - Description:      [e.g., Core contributor to React & Next.js ecosystem packages]
+  - Tech Tags:        [e.g., Open Source, PRs]
+  - Stars / Metric:   [e.g., 500+]
+  - Forks / Metric:   [e.g., 100]
+  - GitHub Link:      [e.g., https://github.com/your-username]
+
+--------------------------------------------------------------------------------
+6. SERVICES OFFERED
+--------------------------------------------------------------------------------
+Service 1: [e.g., Frontend Development - Building responsive, interactive UI with Next.js & React]
+Service 2: [e.g., Backend Development - API design, serverless functions, and database architecture]
+Service 3: [e.g., UI/UX Design - Designing modern user interfaces and user flows]
+Service 4: [e.g., Open Source & Code Auditing - Performance optimization and codebase refactoring]
+
+--------------------------------------------------------------------------------
+7. HERO SECTION & VISUAL PREFERENCE
+--------------------------------------------------------------------------------
+- 3D Spline Model: [Keep existing 3D interactive model / Provide custom 3D Spline URL / Replace with static hero graphic]
+
+--------------------------------------------------------------------------------
+8. CONTACT & FREELANCE STATUS
+--------------------------------------------------------------------------------
+Status Message: [e.g., Currently available for freelance work and open to full-time roles!]
+CTA Button Text: [e.g., Get in touch]
+
+================================================================================

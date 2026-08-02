@@ -1,0 +1,10 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="450" fill="#090D16"/>
+  <circle cx="300" cy="180" r="200" fill="#D946EF" fill-opacity="0.25" filter="blur(70px)"/>
+  <circle cx="500" cy="270" r="160" fill="#F43F5E" fill-opacity="0.2" filter="blur(60px)"/>
+  <rect x="150" y="80" width="500" height="290" rx="16" fill="#18181B" fill-opacity="0.8" stroke="#27272A" stroke-width="2"/>
+  <rect x="190" y="110" width="130" height="170" rx="8" fill="#27272A"/>
+  <rect x="335" y="110" width="130" height="170" rx="8" fill="#3F3F46"/>
+  <rect x="480" y="110" width="130" height="170" rx="8" fill="#27272A"/>
+  <text x="400" y="335" text-anchor="middle" fill="#F4F4F5" font-family="system-ui, sans-serif" font-size="22" font-weight="700">Vinyasa Fashion Tech</text>
+</svg>
