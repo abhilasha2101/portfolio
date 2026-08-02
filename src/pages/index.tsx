@@ -14,6 +14,7 @@ import {
   FolderGit2,
   ExternalLink,
   Download,
+  FileText,
 } from "lucide-react";
 import { TriangleDownIcon } from "@radix-ui/react-icons";
 import Spline from "@splinetool/react-spline";
@@ -287,8 +288,8 @@ export default function Home() {
                 </a>
               </Button>
               <Button variant="outline" asChild>
-                <a href="/resume.pdf" download="Abhilasha_Kumari_Resume.pdf" target="_blank" rel="noopener noreferrer">
-                  <Download className="mr-2 h-4 w-4 text-primary" /> Resume
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                  <FileText className="mr-2 h-4 w-4 text-primary" /> Resume
                 </a>
               </Button>
               <Button
