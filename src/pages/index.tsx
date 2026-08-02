@@ -54,7 +54,7 @@ const projects = [
     title: "TwoDo",
     description:
       "A collaborative productivity platform featuring secure authentication, real-time synchronization, offline PWA support, web push notifications, calendar management, and PostgreSQL Row Level Security powered by Supabase.",
-    image: "/assets/twodo.svg",
+    image: "/assets/twodo.png",
     href: "https://two-do-one.vercel.app",
     github: "https://github.com/abhilasha2101/TwoDo",
   },
@@ -62,7 +62,7 @@ const projects = [
     title: "Veritas AI",
     description:
       "AI-powered news verification platform that evaluates claims against reliable sources and generates structured evidence-backed verdicts with confidence scoring and citation support.",
-    image: "/assets/veritas.svg",
+    image: "/assets/veritas.png",
     href: "https://veritasai-mu.vercel.app",
     github: "https://github.com/abhilasha2101/Veritas-AI",
   },
@@ -70,7 +70,7 @@ const projects = [
     title: "Vinyasa",
     description:
       "A fashion discovery platform helping users explore curated outfits, discover style inspiration, and shop seamlessly through a modern editorial interface.",
-    image: "/assets/vinyasa.svg",
+    image: "/assets/vinyasa.png",
     href: "https://vinyasa.qzz.io",
     github: "https://github.com/abhilasha2101/Vinyasa",
   },
@@ -78,7 +78,7 @@ const projects = [
     title: "AI Booth Management System",
     description:
       "AI-powered civic platform enabling voter registration, grievance management, public issue tracking, and intelligent complaint prioritization using Ollama.",
-    image: "/assets/booth.svg",
+    image: "/assets/booth.png",
     href: "https://github.com/vidhika-anjne/BoothManagement",
     github: "https://github.com/vidhika-anjne/BoothManagement",
   },
