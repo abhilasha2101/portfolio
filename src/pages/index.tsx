@@ -344,85 +344,77 @@ export default function Home() {
               large-scale web applications. Here are some of my favorites:
             </p>
 
-            {/* Carousel */}
-            <div className="mt-14">
-              <Carousel setApi={setCarouselApi} className="w-full">
-                <CarouselContent>
-                  {projects.map((project) => (
-                    <CarouselItem key={project.title} className="md:basis-1/2">
-                      <Card id="tilt" className="relative overflow-hidden border border-white/10 bg-white/5 backdrop-blur">
-                        <CardHeader className="p-0">
-                          <Link href={project.href} target="_blank" passHref>
-                            {project.image.endsWith(".webm") || project.image.endsWith(".mp4") ? (
-                              <video
-                                src={project.image}
-                                autoPlay
-                                loop
-                                muted
-                                className="aspect-video h-full w-full rounded-t-md bg-primary/20 object-cover"
-                              />
-                            ) : (
-                              <div className="relative aspect-video h-full w-full rounded-t-md bg-primary/20 overflow-hidden">
-                                <Image
-                                  src={project.image.startsWith("/") ? project.image : `/assets/${project.image}`}
-                                  alt={project.title}
-                                  width={600}
-                                  height={300}
-                                  quality={100}
-                                  className="aspect-video h-full w-full object-cover transition duration-300 hover:scale-105"
-                                  unoptimized
-                                />
-                              </div>
-                            )}
-                          </Link>
-                        </CardHeader>
-                        <CardContent className="p-5 bg-background/80 backdrop-blur border-t border-white/10">
-                          <div className="flex items-center justify-between">
-                            <CardTitle className="text-lg font-semibold tracking-tight text-foreground">
-                              {project.title}
-                            </CardTitle>
-                            <div className="flex items-center space-x-2">
-                              {project.github && (
-                                <Link
-                                  href={project.github}
-                                  target="_blank"
-                                  passHref
-                                  className="text-muted-foreground transition hover:text-foreground"
-                                  title="GitHub Repository"
-                                >
-                                  <FolderGit2 className="h-5 w-5" />
-                                </Link>
-                              )}
-                              {project.href && project.href !== "#" && (
-                                <Link
-                                  href={project.href}
-                                  target="_blank"
-                                  passHref
-                                  className="text-muted-foreground transition hover:text-foreground"
-                                  title="Live Demo"
-                                >
-                                  <ExternalLink className="h-5 w-5" />
-                                </Link>
-                              )}
-                            </div>
-                          </div>
-                          <p className="mt-2 text-xs tracking-tight text-muted-foreground line-clamp-3">
-                            {project.description}
-                          </p>
-                        </CardContent>
-                      </Card>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-              </Carousel>
-              <div className="py-2 text-center text-sm text-muted-foreground">
-                <span className="font-semibold">
-                  {current} / {count}
-                </span>{" "}
-                projects
-              </div>
+            {/* Projects Grid */}
+            <div className="mt-14 grid gap-6 md:grid-cols-2">
+              {projects.map((project) => (
+                <Card
+                  key={project.title}
+                  id="tilt"
+                  className="flex flex-col justify-between overflow-hidden border border-white/10 bg-white/5 backdrop-blur transition duration-300 hover:border-primary/50 hover:bg-white/10"
+                >
+                  <CardHeader className="p-0">
+                    <Link href={project.href} target="_blank" passHref>
+                      {project.image.endsWith(".webm") || project.image.endsWith(".mp4") ? (
+                        <video
+                          src={project.image}
+                          autoPlay
+                          loop
+                          muted
+                          className="aspect-video h-full w-full rounded-t-md bg-primary/20 object-cover"
+                        />
+                      ) : (
+                        <div className="relative aspect-video h-full w-full rounded-t-md bg-primary/20 overflow-hidden">
+                          <Image
+                            src={project.image.startsWith("/") ? project.image : `/assets/${project.image}`}
+                            alt={project.title}
+                            width={600}
+                            height={300}
+                            quality={100}
+                            className="aspect-video h-full w-full object-cover transition duration-300 hover:scale-105"
+                            unoptimized
+                          />
+                        </div>
+                      )}
+                    </Link>
+                  </CardHeader>
+                  <CardContent className="flex flex-1 flex-col justify-between border-t border-white/10 bg-background/80 p-5 backdrop-blur">
+                    <div>
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-lg font-semibold tracking-tight text-foreground">
+                          {project.title}
+                        </CardTitle>
+                        <div className="flex items-center space-x-2">
+                          {project.github && (
+                            <Link
+                              href={project.github}
+                              target="_blank"
+                              passHref
+                              className="text-muted-foreground transition hover:text-foreground"
+                              title="GitHub Repository"
+                            >
+                              <FolderGit2 className="h-5 w-5" />
+                            </Link>
+                          )}
+                          {project.href && project.href !== "#" && (
+                            <Link
+                              href={project.href}
+                              target="_blank"
+                              passHref
+                              className="text-muted-foreground transition hover:text-foreground"
+                              title="Live Demo"
+                            >
+                              <ExternalLink className="h-5 w-5" />
+                            </Link>
+                          )}
+                        </div>
+                      </div>
+                      <p className="mt-2 text-sm tracking-tight text-muted-foreground">
+                        {project.description}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
