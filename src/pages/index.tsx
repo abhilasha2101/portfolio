@@ -13,6 +13,7 @@ import {
   Star,
   FolderGit2,
   ExternalLink,
+  Download,
 } from "lucide-react";
 import { TriangleDownIcon } from "@radix-ui/react-icons";
 import Spline from "@splinetool/react-spline";
@@ -47,6 +48,29 @@ const aboutStats = [
   { label: "Internship & Experience", value: "6 Months" },
   { label: "Technologies", value: "15+" },
   { label: "Projects Built", value: "8+" },
+];
+
+const skillCategories = [
+  {
+    category: "Backend Development",
+    icon: Code2,
+    skills: ["Java", "Spring Boot", "Node.js", "REST APIs"],
+  },
+  {
+    category: "Frontend Development",
+    icon: MonitorSmartphone,
+    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    category: "Databases & Cloud",
+    icon: Frame,
+    skills: ["PostgreSQL", "Supabase", "MySQL", "Docker"],
+  },
+  {
+    category: "Tools & Problem Solving",
+    icon: SearchCheck,
+    skills: ["Git & GitHub", "DSA", "Ollama AI", "Vercel"],
+  },
 ];
 
 const projects = [
@@ -249,15 +273,20 @@ export default function Home() {
               data-scroll
               data-scroll-enable-touch-speed
               data-scroll-speed=".06"
-              className="flex flex-row items-center space-x-1.5 pt-6"
+              className="flex flex-wrap items-center gap-3 pt-6"
             >
               <Link href="mailto:abhilasha21012005@gmail.com" passHref>
                 <Button>
                   Let&apos;s Connect <ChevronRight className="ml-1 h-4 w-4" />
                 </Button>
               </Link>
+              <a href="/resume.pdf" download="Abhilasha_Kumari_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline">
+                  <Download className="mr-2 h-4 w-4 text-primary" /> Resume
+                </Button>
+              </a>
               <Button
-                variant="outline"
+                variant="ghost"
                 onClick={() => scrollTo(document.querySelector("#about"))}
               >
                 Learn more
@@ -311,6 +340,41 @@ export default function Home() {
                   </span>
                 </div>
               ))}
+            </div>
+
+            {/* Categorized Skills Grid */}
+            <div className="mt-12">
+              <span className="text-gradient clash-grotesk text-sm font-semibold tracking-tighter">
+                ⚡ Tech Stack
+              </span>
+              <h3 className="mt-2 text-2xl font-semibold tracking-tight text-foreground">
+                Technical Skills & Tools
+              </h3>
+              <div className="mt-6 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+                {skillCategories.map((cat) => (
+                  <div
+                    key={cat.category}
+                    className="flex flex-col rounded-lg border border-white/10 bg-white/5 p-6 backdrop-blur transition duration-300 hover:border-primary/50 hover:bg-white/10"
+                  >
+                    <div className="mb-4 flex items-center space-x-3">
+                      <cat.icon className="h-6 w-6 text-primary" />
+                      <h4 className="text-sm font-semibold tracking-tight text-foreground">
+                        {cat.category}
+                      </h4>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {cat.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="rounded-md bg-white/10 px-2.5 py-1 text-xs font-medium text-muted-foreground"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
