@@ -49,16 +49,15 @@ export default function Footer() {
             </p>
           </span>
         </span>
-        <Link
-          href="mailto:abhilasha21012005@gmail.com"
-          passHref
-          className="text-xs text-muted-foreground hover:text-foreground"
-        >
-          <Button variant={"outline"}>
+        <Button variant={"outline"} asChild>
+          <a
+            href="mailto:abhilasha21012005@gmail.com"
+            className="text-xs text-muted-foreground hover:text-foreground"
+          >
             <MailIcon className="h-4 w-4 md:mr-2" />
             <span className="hidden md:flex">abhilasha21012005@gmail.com</span>
-          </Button>
-        </Link>
+          </a>
+        </Button>
       </div>
       <div className="h-1 bg-[radial-gradient(closest-side,#8486ff,#42357d,#5d83ff,transparent)] opacity-50" />
     </footer>

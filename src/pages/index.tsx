@@ -155,6 +155,12 @@ export default function Home() {
   const [current, setCurrent] = useState<number>(0);
   const [count, setCount] = useState<number>(0);
 
+  const [mounted, setMounted] = useState<boolean>(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // handle scroll
   useEffect(() => {
     const sections = document.querySelectorAll("section");
@@ -184,7 +190,6 @@ export default function Home() {
 
         if (li.getAttribute("href") === `#${current}`) {
           li.classList.add("nav-active");
-          console.log(li.getAttribute("href"));
         }
       });
     }
@@ -210,7 +215,8 @@ export default function Home() {
 
   // card hover effect
   useEffect(() => {
-    const tilt: HTMLElement[] = Array.from(document.querySelectorAll("#tilt"));
+    if (!mounted) return;
+    const tilt: HTMLElement[] = Array.from(document.querySelectorAll(".tilt-card"));
     VanillaTilt.init(tilt, {
       speed: 300,
       glare: true,
@@ -219,7 +225,7 @@ export default function Home() {
       perspective: 900,
       scale: 0.9,
     });
-  }, []);
+  }, [mounted]);
 
   return (
     <Container>
@@ -275,16 +281,16 @@ export default function Home() {
               data-scroll-speed=".06"
               className="flex flex-wrap items-center gap-3 pt-6"
             >
-              <Link href="mailto:abhilasha21012005@gmail.com" passHref>
-                <Button>
+              <Button asChild>
+                <a href="mailto:abhilasha21012005@gmail.com">
                   Let&apos;s Connect <ChevronRight className="ml-1 h-4 w-4" />
-                </Button>
-              </Link>
-              <a href="/resume.pdf" download="Abhilasha_Kumari_Resume.pdf" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline">
+                </a>
+              </Button>
+              <Button variant="outline" asChild>
+                <a href="/resume.pdf" download="Abhilasha_Kumari_Resume.pdf" target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-4 w-4 text-primary" /> Resume
-                </Button>
-              </a>
+                </a>
+              </Button>
               <Button
                 variant="ghost"
                 onClick={() => scrollTo(document.querySelector("#about"))}
@@ -309,9 +315,11 @@ export default function Home() {
             id={styles["canvas-container"]}
             className="mt-14 h-full w-full xl:mt-0"
           >
-            <Suspense fallback={<span>Loading...</span>}>
-              <Spline scene="/assets/scene.splinecode" />
-            </Suspense>
+            {mounted && (
+              <Suspense fallback={<span>Loading...</span>}>
+                <Spline scene="/assets/scene.splinecode" />
+              </Suspense>
+            )}
           </div>
         </section>
 
@@ -413,8 +421,7 @@ export default function Home() {
               {projects.map((project) => (
                 <Card
                   key={project.title}
-                  id="tilt"
-                  className="flex flex-col justify-between overflow-hidden border border-white/10 bg-white/5 backdrop-blur transition duration-300 hover:border-primary/50 hover:bg-white/10"
+                  className="tilt-card flex flex-col justify-between overflow-hidden border border-white/10 bg-white/5 backdrop-blur transition duration-300 hover:border-primary/50 hover:bg-white/10"
                 >
                   <CardHeader className="p-0">
                     <Link href={project.href} target="_blank" passHref>
@@ -500,8 +507,7 @@ export default function Home() {
               {openSourceProjects.map((project) => (
                 <Card
                   key={project.title}
-                  id="tilt"
-                  className="flex flex-col justify-between border border-white/10 bg-white/5 p-6 backdrop-blur transition duration-300 hover:border-primary/50 hover:bg-white/10"
+                  className="tilt-card flex flex-col justify-between border border-white/10 bg-white/5 p-6 backdrop-blur transition duration-300 hover:border-primary/50 hover:bg-white/10"
                 >
                   <div>
                     <div className="flex items-center justify-between">
@@ -627,9 +633,9 @@ export default function Home() {
             <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
               Open to Software Development internships and full-time opportunities.
             </p>
-            <Link href="mailto:abhilasha21012005@gmail.com" passHref>
-              <Button className="mt-6">Let&apos;s Connect</Button>
-            </Link>
+            <Button asChild className="mt-6">
+              <a href="mailto:abhilasha21012005@gmail.com">Let&apos;s Connect</a>
+            </Button>
           </div>
         </section>
       </div>
